@@ -1,4 +1,4 @@
-package uppercasecallback.client;
+package uppercasebroadcast.client;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -24,7 +24,8 @@ public class RunClient
       }
       try
       {
-        client.toUpperCase(line);
+        String result = client.toUpperCase(line);
+        System.out.println("Result > " + result);
       }
       catch (Exception e)
       {
