@@ -15,12 +15,12 @@ public class RemoteMessageServer implements RemoteMessageList
     UnicastRemoteObject.exportObject(this, 0);
   }
 
-  @Override public synchronized void addMessage(String msg) throws RemoteException
+  @Override public synchronized void addMessage(String msg)
   {
     list.add(msg);
   }
 
-  @Override public String getMessageList() throws RemoteException
+  @Override public String getMessageList()
   {
     String str = "";
     for (String msg : list)
@@ -30,7 +30,7 @@ public class RemoteMessageServer implements RemoteMessageList
     return str;
   }
 
-  @Override public int size() throws RemoteException
+  @Override public int size()
   {
     return list.size();
   }

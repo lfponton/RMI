@@ -10,7 +10,7 @@ public class RMIServerImplementation implements UpperCaseServer
   public RMIServerImplementation() throws RemoteException {
     UnicastRemoteObject.exportObject(this, 0);
   }
-  @Override public String toUpperCase(String str) throws RemoteException
+  @Override public String toUpperCase(String str)
   {
     return str.toUpperCase();
   }

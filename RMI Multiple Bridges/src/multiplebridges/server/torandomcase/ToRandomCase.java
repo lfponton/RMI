@@ -12,7 +12,7 @@ public class ToRandomCase implements IToRandomCase
     UnicastRemoteObject.exportObject(this, 0);
   }
 
-  @Override public String toRandomCase(String arg) throws RemoteException
+  @Override public String toRandomCase(String arg)
   {
     String result  = "";
     char[] charArray = arg.toCharArray();

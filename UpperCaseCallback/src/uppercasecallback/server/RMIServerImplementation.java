@@ -13,7 +13,6 @@ public class RMIServerImplementation implements UpperCaseServer
   }
 
   @Override public void toUpperCase(String str, UpperCaseClient client)
-      throws RemoteException
   {
     String result = str.toUpperCase();
     // assume heavy calculation
