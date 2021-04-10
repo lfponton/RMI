@@ -16,8 +16,16 @@ public class TextClient
     server = (TextServer) registry.lookup("Server");
   }
 
-  public void sendText(String text) throws RemoteException
+  public void sendText(String text)
   {
-    server.printText(text);
+    try
+    {
+      server.printText(text);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+      throw new RuntimeException("Could not connect to the server.");
+    }
   }
 }

@@ -18,13 +18,29 @@ public class RemoteClient
     System.out.println("Server started.");
   }
 
-  public String changeToUpperCase(String arg) throws RemoteException
+  public String changeToUpperCase(String arg)
   {
-    return stringChangingServer.getUpperCase().toUpperCase(arg);
+    try
+    {
+      return stringChangingServer.getUpperCase().toUpperCase(arg);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+      throw new RuntimeException("Could not connect to the server.");
+    }
   }
 
-  public String changeToRandom(String arg) throws RemoteException
+  public String changeToRandom(String arg)
   {
-    return stringChangingServer.getToRandomCase().toRandomCase(arg);
+    try
+    {
+      return stringChangingServer.getToRandomCase().toRandomCase(arg);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+      throw new RuntimeException("Could not connect to the server.");
+    }
   }
 }
